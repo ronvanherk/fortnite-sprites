@@ -8,8 +8,8 @@ Deze map wordt door GitHub Pages geserveerd en voedt de Android-app **Sprite Tra
 | `images/` | Eén WebP per variant, 256 px. Bestandsnaam is de `id` uit `sprites.json`. |
 | `index.html` | Galerij met alles erin — de publieke pagina van deze site. |
 
-Stand: **44 sprites, 225 varianten**, waarvan 178 uitgebracht en 47 nog niet. Verdeeld over twee
-seizoenen: Runners (Chapter 7 Season 3) 25 sprites / 161 varianten, Override (Season 4) 19 / 64.
+Stand: **48 sprites, 249 varianten**, waarvan 191 uitgebracht en 58 nog niet. Verdeeld over twee
+seizoenen: Runners (Chapter 7 Season 3) 25 sprites / 161 varianten, Override (Season 4) 23 / 88.
 
 ## Bijwerken
 
@@ -38,9 +38,14 @@ Is die datum ouder dan de laatste commit hier, dan is er niets veranderd. Twee d
 bij het vergelijken:
 
 - De id's hier zijn korter dan upstream: `_cheatmaster` → `_cheat`, `_loothacker` → `_loot`,
-  `dumpsterdive` → `dumpster`. Zonder die mapping lijkt de halve lijst nieuw.
+  `_bountyhunter` → `_bounty`, `dumpsterdive` → `dumpster`. Zonder die mapping lijkt de halve
+  lijst nieuw.
 - `api/releases.php` kan de `unreleased`-vlaggen overrulen, maar staat bewust leeg. Staat er wél
   iets in, dan is dát de actuele releasestatus.
+
+De mtimes op `spriteimg/` zijn geen betrouwbaar signaal: op 16 september 2026 kreeg de hele map in
+één klap een nieuwe `Last-Modified`, terwijl 176 van de 225 bestaande afbeeldingen ongewijzigd
+bleken. Gebruik ze om te zien *waar je moet kijken*, en vergelijk daarna de bytes.
 
 Afbeeldingen worden geschaald naar 256×256 (LANCZOS) en opgeslagen als WebP met `quality=88` en
 `method=6`. Met diezelfde instellingen levert een hercodering van de bron bytegelijke bestanden op,
